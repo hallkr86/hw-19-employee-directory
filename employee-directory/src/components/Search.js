@@ -1,27 +1,36 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import Container from "../components/Container";
-import SearchForm from "../components/SearchForm";
-import SearchResults from "../components/SearchResults";
+import Container from "./Container";
+import SearchForm from "./SearchForm";
+import SearchResults from "./SearchResults";
+
+
+import Alert from "./Alert";
 
 
 class Search extends Component {
     state = {
         search: "",
         employees: [],
-        results: [],
+        filteredEmployees: [],
         error: ""
     };
 
     componentDidMount() {
+      console.log("componentMounted");
         API.getEmployee()
-        .then(res => this.setState({ employees: res.data.message }))
+        .then(res => this.setState({ employees: res.data.results }))
         .catch(err => console.log(err)); 
     }
 
     handleInputChange = event => {
-        this.setState({ search: event.target.value });
-      };
+      this.setState({ search: event.target.value });
+    };
+        
+           
+        
+       
+
 
     handleFormSubmit = event => {
     event.preventDefault();
@@ -55,6 +64,6 @@ class Search extends Component {
           </div>
         );
       }
-}
+};
 
 export default Search;

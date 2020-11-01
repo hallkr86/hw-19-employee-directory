@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import App from './components/App';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from "./components/Container";
-import SearchForm from "./components/SearchForm";
-import SearchResults from "./components/SearchResults"; 
+ 
 
 ReactDOM.render(
 
