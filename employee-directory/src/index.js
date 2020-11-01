@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from "./components/Container";
+import SearchForm from "./components/SearchForm";
+import SearchResults from "./components/SearchResults"; 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+
+    <App />,
+ 
   document.getElementById('root')
 );
 
