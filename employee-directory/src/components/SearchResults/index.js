@@ -1,14 +1,25 @@
-import React from "react";
+import React from 'react';
 //import "./style.css";
 
 function SearchResults(props) {
   return (
-    <ul className="list-group search-results">
-      {this.props.employees.map(employee => (
-        <li key={employee.id} className="list-group-item">
-          <img alt="result.title" src={employee.images.original.url} className="img-fluid" />
-        </li>
-      ))}
+    <ul className='list-group search-results'>
+      {props.employees.length &&
+        props.employees.map((employee) => (
+          <li key={employee.id} className='list-group-item'>
+            <img
+              alt='result.title'
+              src={employee.picture.large}
+              className='img-fluid'
+            />
+            <h6>First Name: {employee.name.first}</h6>
+            <h6>Last Name: {employee.name.last}</h6>
+            <h6>ID: {employee.login.uuid}</h6>
+            <h6>Email: {employee.email}</h6>
+            <h6>Phone: {employee.phone}</h6>
+            <h6>Age: {employee.dob.age}</h6>
+          </li>
+        ))}
     </ul>
   );
 }
