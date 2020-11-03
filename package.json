@@ -1,8 +1,8 @@
 {
-  "name": "employee-directory",
+  "name": "hw-19-employee-directory",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hallkr86.github.io/employee-directory",
+  "homepage": "https://hallkr86.github.io/hw-19-employee-directory",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.0",
