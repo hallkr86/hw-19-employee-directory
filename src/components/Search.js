@@ -27,6 +27,13 @@ class Search extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
+    
+      const searchedEmployee = this.state.employees.filter((employee) => {
+        return employee.name.first.slice(0, this.state.searchTerm.name.length).toLowerCase() === this.state.searchTerm.toLowerCase()
+      })
+
+      this.setState({ filteredEmployees: searchedEmployee })
+   
     API.getEmployee(this.state.search)
       .then((res) => {
         if (res.data.status === 'error') {
@@ -53,6 +60,7 @@ class Search extends Component {
             handleInputChange={this.handleInputChange}
             employees={this.state.employees}
           />
+          
           <SearchResults employees={this.state.employees} />
         </Container>
       </div>

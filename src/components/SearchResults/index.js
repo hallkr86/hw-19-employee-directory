@@ -3,6 +3,11 @@ import React from 'react';
 
 function SearchResults(props) {
   return (
+
+    // add a conditional render statement 
+    // is there data in 'filteredEmployees'? if yes show filtered dataset
+    // if NO show all employees
+    
     <ul className='list-group search-results'>
       {props.employees.length &&
         props.employees.map((employee) => (
